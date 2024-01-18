@@ -3,17 +3,17 @@
 /**
  * push - adds an element to a stack
  * @head: points to head of stack
- * @line_nu: line number
+ * @count: line number
  * Return: no return
  */
 
-void push(stack_t **head, unsigned int line_nu)
+void push(stack_t **head, unsigned int count)
 {
 	int store, j;
 
 	if (!jaza.arg)
 	{
-		fprintf(stderr, "error stack is empty%u\n", line_nu);
+		fprintf(stderr, "L%d: usage: push integer\n", count);
 		fclose(jaza.file);
 		free(jaza.content);
 		free_stack(*head);
@@ -23,7 +23,7 @@ void push(stack_t **head, unsigned int line_nu)
 	{
 		if (!isdigit(jaza.arg[j] && jaza.arg[j] != 'n'))
 		{
-			fprintf(stderr, "Usage: push an integer%u\n", line_nu);
+			fprintf(stderr, "L%d: usage: push integer\n", count);
 			fclose(jaza.file);
 			free(jaza.content);
 			free_stack(*head);

@@ -1,5 +1,5 @@
 #include "monty.h"
-
+jaza_t jaza =  {NULL, NULL, 0};
 /**
  * free_stack -  frees a doubly linked list
  * @head: points to the head node
@@ -19,7 +19,7 @@ void free_stack(stack_t *head)
 /**
  * addnode - adds a node to the head as a stack or doubly linked list
  * @head: points to the head node
- * @store: new value
+ * @n: new value
  * Return: no return
  */
 void addnode(stack_t **head, int n)

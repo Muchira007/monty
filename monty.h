@@ -53,9 +53,14 @@ typedef struct jaza_s
 } jaza_t;
 extern jaza_t jaza;
 
-void push(stack_t **head, unsigned int line_nu);
+void push(stack_t **head, unsigned int count);
 void free_stack(stack_t *head);
 void addnode(stack_t **head, int store);
-int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
+int execute(char *content, stack_t **head, unsigned int count, FILE *file);
+void pall(stack_t **head, unsigned int count);
+void pop(stack_t **head, unsigned int count);
+void swap(stack_t **head, unsigned int coun);
+void add(stack_t **head, unsigned int count);
+void nop(stack_t **head, unsigned int count);
 
 #endif

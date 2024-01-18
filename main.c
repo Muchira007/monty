@@ -4,8 +4,6 @@
 #include <unistd.h>
 #define MAX_SIZE 1024
 
-jaza_t jaza = {NULL, NULL, 0};
-
 /**
  * main - interprates monty code according to format
  * @argc: ......
