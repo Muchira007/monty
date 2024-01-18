@@ -56,5 +56,6 @@ extern jaza_t jaza;
 void push(stack_t **head, unsigned int line_nu);
 void free_stack(stack_t *head);
 void addnode(stack_t **head, int store);
+int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
 
 #endif

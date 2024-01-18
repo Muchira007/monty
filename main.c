@@ -2,8 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#define MAX_SIZE 1024
 
-jaza_t jaza = {NULL, NULL, NULL, 0};
+jaza_t jaza = {NULL, NULL, 0};
 
 /**
  * main - interprates monty code according to format
@@ -14,9 +15,8 @@ jaza_t jaza = {NULL, NULL, NULL, 0};
 
 int main(int argc, char *argv[])
 {
-	char *content;
+	char content[MAX_SIZE];
 	FILE *file;
-	size_t size = 0;
 	ssize_t g_line = 1;
 	stack_t *stack = NULL;
 	unsigned int count = 0;
@@ -35,15 +35,20 @@ int main(int argc, char *argv[])
 	}
 	while (g_line > 0)
 	{
-		content = NULL;
-		g_line = getline(&content, &size, file);
-		jaza.content = content;
-		count++;
+		content[0] = '\0';
+		g_line = (ssize_t)fgets(content, MAX_SIZE, file);
+
 		if (g_line > 0)
 		{
+			size_t len = strlen(content);
+
+			if (len > 0 && content[len - 1] == '\n')
+				content[len - 1] = '\0';
+			jaza.content = content;
+			count++;
+
 			execute(content, &stack, count, file);
 		}
-		free(content);
 	}
 	free_stack(stack);
 	fclose(file);
