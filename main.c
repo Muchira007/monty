@@ -1,4 +1,8 @@
 #include "monty.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
 jaza_t jaza = {NULL, NULL, NULL, 0};
 
 /**
@@ -8,7 +12,7 @@ jaza_t jaza = {NULL, NULL, NULL, 0};
  * Return: 0 on success
  */
 
-int main(int argc, char argv[])
+int main(int argc, char *argv[])
 {
 	char *content;
 	FILE *file;

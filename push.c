@@ -21,7 +21,7 @@ void push(stack_t **head, unsigned int line_nu)
 	}
 	for (j = 0; jaza.arg[j] != '\0'; j++)
 	{
-		if (!isdigit(jaza.arg[j] && jaza.arg[j] != 'n')
+		if (!isdigit(jaza.arg[j] && jaza.arg[j] != 'n'))
 		{
 			fprintf(stderr, "Usage: push an integer%u\n", line_nu);
 			fclose(jaza.file);
@@ -30,6 +30,6 @@ void push(stack_t **head, unsigned int line_nu)
 			exit(EXIT_FAILURE);
 		}
 	}
-	store = atoi(jaza.arg)
+	store = atoi(jaza.arg);
 	addnode(head, store);
 }

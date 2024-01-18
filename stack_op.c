@@ -9,11 +9,11 @@ void free_stack(stack_t *head)
 	stack_t *temp;
 
 	temp = head;
-	while
+	while (temp != NULL)
 	{
 		temp = head->next;
 		free(head);
-		head = temp
+		head = temp;
 	}
 }
 /**
@@ -22,7 +22,7 @@ void free_stack(stack_t *head)
  * @store: new value
  * Return: no return
  */
-void addnode(stack_t **head, int store)
+void addnode(stack_t **head, int n)
 {
 	stack_t *newnode, *temp;
 
@@ -36,13 +36,13 @@ void addnode(stack_t **head, int store)
 	if (temp)
 	{
 		temp->prev = newnode;
-		newnode->store = store;
+		newnode->n = n;
 		newnode->prev = NULL;
 		*head = newnode;
 	}
 	else
 	{
-		newnode->store = store;
+		newnode->n = n;
 		newnode->prev = NULL;
 		newnode->next = NULL;
 		*head = newnode;
