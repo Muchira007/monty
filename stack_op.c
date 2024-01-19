@@ -1,5 +1,5 @@
 #include "monty.h"
-jaza_t jaza =  {NULL, NULL, 0};
+
 /**
  * free_stack -  frees a doubly linked list
  * @head: points to the head node

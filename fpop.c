@@ -14,7 +14,6 @@ void pop(stack_t **head, unsigned int count)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", count);
 		fclose(jaza.file);
-		free(jaza.content);
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}

@@ -21,7 +21,6 @@ void swap(stack_t **head, unsigned int count)
 	{
 		fprintf(stderr, "L%u: can't swap, stack too short", count);
 		fclose(jaza.file);
-		free(jaza.content);
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}

@@ -9,6 +9,21 @@
 #include <string.h>
 #include <ctype.h>
 
+#define MAX_SIZE 1024
+
+/**
+ * struct global_s - variables -args, file, line content
+ * @arg: value
+ * @file: points to a monty file
+ * @content: content present in a line
+ * Description: carries values through the program
+ */
+typedef struct global_s
+{
+	FILE *file;
+	char content[MAX_SIZE];
+	char *arg;
+} global_t;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -38,21 +53,10 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-/**
- * struct jaza_s - variables -args, file, line content
- * @arg: value
- * @file: points to a monty file
- * @content: content present in a line
- * Description: carries values through the program
- */
-typedef struct jaza_s
-{
-	char *arg;
-	FILE *file;
-	char *content;
-} jaza_t;
-extern jaza_t jaza;
 
+extern global_t jaza;
+
+int main(int argc, char *argv[]);
 void push(stack_t **head, unsigned int count);
 void free_stack(stack_t *head);
 void addnode(stack_t **head, int store);

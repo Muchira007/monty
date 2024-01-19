@@ -15,7 +15,6 @@ void push(stack_t **head, unsigned int count)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", count);
 		fclose(jaza.file);
-		free(jaza.content);
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
@@ -25,7 +24,6 @@ void push(stack_t **head, unsigned int count)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", count);
 			fclose(jaza.file);
-			free(jaza.content);
 			free_stack(*head);
 			exit(EXIT_FAILURE);
 		}

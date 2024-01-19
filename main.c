@@ -1,9 +1,11 @@
 #include "monty.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include <unistd.h>
 #define MAX_SIZE 1024
 
+global_t jaza;
 /**
  * main - interprates monty code according to format
  * @argc: ......
@@ -42,9 +44,8 @@ int main(int argc, char *argv[])
 
 			if (len > 0 && content[len - 1] == '\n')
 				content[len - 1] = '\0';
-			jaza.content = content;
+			strcpy(jaza.content, content);
 			count++;
-
 			execute(content, &stack, count, file);
 		}
 	}
